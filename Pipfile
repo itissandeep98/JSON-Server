@@ -9,7 +9,7 @@ verify_ssl = true
 flask = "*"
 flask-sqlalchemy = "*"
 mysqlclient = "*"
-gunicorn = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.8"

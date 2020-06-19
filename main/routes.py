@@ -1,6 +1,7 @@
 from flask import render_template, request, session
 from main import app, db
 from main.models import *
+import pandas as pd
 
 @app.route('/createad', methods = ['POST'])
 def create_ad():
@@ -59,9 +60,59 @@ def my_ads():
 	return response
 
 @app.route('/deletead', methods = ['POST'])
-def Delete_ad():
-	print(request.json)
-	return {'success':False}
+def delete_ad():
+	id = request.json['id']
+
+	try:
+		Ad.query.filter_by(id = id).delete()
+		db.session.commit()
+		response = {'success': True}
+
+	except Exception as e:
+		response = {'success': False, 'error': str(e)}
+
+	return response
+
+@app.route('/search', methods=['GET'])
+def search_ads():
+	book_name = request.args.get('title')
+	author = request.args.get('author')
+
+	try:
+		query = Ad.query
+
+		if len(book_name) > 0:
+			query = query.filter(Ad.book_name.like(f'%{ book_name }%'))
+
+		if len(author) > 0:
+			query = query.filter(Ad.author.like(f'%{ author }%'))
+
+		result = []
+
+		for ad in query.all():
+			x = ad.as_dict()
+			x['user_name'] = User.query.filter_by(id = ad.user_id).first().name
+			result.append(x)
+
+		response = {'result': result, 'success': True}
+
+	except Exception as e:
+		response = {'success': False, 'error': str(e)}
+
+	return response
+
+@app.route('/contactdetails', methods = ['GET'])
+def contact_details():
+	user_id = request.args.get('user_id')
+
+	try:
+		user = User.query.filter_by(id = user_id).first().as_dict()
+		response = {'user': user, 'success': True}
+
+	except Exception as e:
+		response = {'success': False, 'error': str(e)}
+
+	return response
 
 @app.route('/logout', methods = ['POST'])
 def logout():
@@ -70,7 +121,6 @@ def logout():
 
 @app.route('/login', methods = ['POST'])
 def login():
-	# print(request.json)
 	email_id = request.json['email_id']
 	password = request.json['password']
 	
@@ -101,6 +151,25 @@ def register():
 	except Exception as e:
 		response = {'success': False, 'error': str(e)}
 
+	return response
+
+@app.route('/courses', methods = ['GET'])
+def courses():
+	try:
+		my_csv = pd.read_csv('./courses.csv', sep = ',')
+		key = my_csv['Serial Number'].tolist()
+		value = my_csv['Course Name'].tolist()
+		text = my_csv['Course Name'].tolist()
+		courses_list = []
+
+		for i in range(len(key)):
+			courses_list.append({'key': key[i], 'value': value[i], 'text': text[i]})
+
+		response = {'courses': courses_list, 'success': True}
+	
+	except Exception as e:
+		response = {'success': False, 'error': str(e)}
+		
 	return response
 
 @app.route('/')

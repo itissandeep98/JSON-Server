@@ -1,0 +1,266 @@
+Serial Number,Course Name,Course Code,Course Acronym
+1,Foundations of Biology,BIO101,FOB
+2,Introduction to Quantitative Biology,BIO213,IQB
+3,Genetics and Molecular Biology,BIO2GMB,GMB
+4,Cell Biology and Bio-Chemistry,BIO501,CBB
+5,Stochastic Simulations in Systems Biology and Biophysics,BIO506,SSSBB
+6,Foundations of Modern Biology,BIO512,FOMB
+7,Practical Bioinformatics,BIO521,PB
+8,Algorithms in Computational Biology,BIO522,ACB
+9,Chemoinformatics,BIO523,ChemInfo
+10,Introduction to Mathematical Biology,BIO531,IMB
+11,Network Biology,BIO532,NB
+12,Systems and Synthetic Biology,BIO533,S&SB
+13,Introduction to Computational Neuroscience,BIO534,ICN
+14,Data Sciences and Genomics,BIO541,DSG
+15,Machine Learning and Biomedical Applications,BIO542,MLBA
+16,Big Data Mining in Healthcare,BIO543,BDMH
+17,Network Science,BIO571,NS
+18,Communication Skills,COM101,COM
+19,Technical Communication,COM301A,TCOM
+20,Introduction to Programming,CSE101,IP
+21,Data Structures & Algorithms,CSE102,DSA
+22,Computer Organization,CSE112,CO
+23,Discrete Mathematics,CSE121,DM
+24,Systems Management,CSE131,SM
+25,Advanced Programming,CSE201,AP
+26,Fundamentals of Database Management System,CSE202,DBMS
+27,Algorithm Design and Analysis,CSE222,ADA
+28,Operating Systems,CSE231,OS
+29,Computer Networks,CSE232,CN
+30,Network Administration,CSE233,NAdmn
+31,Computer Architecture and Operating Systems,CSE234,CAOS
+32,Compilers,CSE301/CSE601,CMP
+33,Modern Algorithm Design,CSE319/CSE519,MAD
+34,Advanced Algorithms,CSE320/CSE520,AA
+35,Theory of Computation,CSE322,ToC
+36,Computer Graphics,CSE333/CSE533,CG
+37,Statistical Machine Learning,CSE342/CSE542,SML
+38,Machine Learning,CSE343/CSE543,ML
+39,Computer Vision,CSE344/CSE544/ECE344/ECE544,CV
+40,Foundations of Computer Security,CSE345/CSE545,FCS
+41,Complexity Theory,CSE421/CSE621,CT
+42,Introduction to Intelligent Systems,CSE440,IS-I
+43,Advanced Biometrics,CSE441/CSE541,BIOM
+44,Designing Human Centered Systems,CSE501,DHCS
+45,Foundations of Parallel Programming,CSE502,FPP
+46,Program Analysis,CSE503,PA
+47,Data Mining,CSE506,DMG
+48,Database System Implementation,CSE507,DBSI
+49,Information Retrieval,CSE508,IR
+50,Big Data Analytics,CSE510,BDA
+51,Computer Architecture,CSE511/ECE511,CA
+52,Randomized Algorithms,CSE523,RA
+53,Theory of Modern cryptography,CSE524,TMC
+54,Graduate Algorithms,CSE525,GA
+55,Convex Optimization,CSE528/ECE528,CO
+56,Approximation Algorithms,CSE529,AAG
+57,Distributed Systems Security,CSE530,DSS
+58,Multi-Agent Systems,CSE531,MAS
+59,Mobile Computing,CSE535,MC
+60,Wireless Networks,CSE538/ECE538,WN
+61,Applied Cryptography,CSE546,AC
+62,Natural Language Processing,CSE551,NLP
+63,Security Engineering,CSE552,SE
+64,Introduction to Spatial Computing,CSE555,ISC
+65,Data Science,CSE558,DS
+66,Mining Large Networks,CSE559,MLN
+67,GPU Computing,CSE560,GPU
+68,Probabilistic Graphical Models,CSE561,PGM
+69,Advanced Computer Vision,CSE562,ACV
+70,Multimedia Computing and Applications,CSE563,MCA
+71,Reinforcement Learning,CSE564,RL
+72,Software Defined Networking,CSE565,SDN
+73,Virtual Reality,CSE570,VR
+74,Introduction to Media Computing,CSE571,IMC
+75,Smart Sensing for Internet of Things (IoT),CSE576,SSIoT
+76,Advanced Internet of Things,CSE577,AIOT
+77,Ontology Modeling,CSE580A,OM
+78,Software Production Evolution and Maintenance,CSE582,SPEM
+79,Affective Computing,CSE5AC,AFC
+80,Geometry Processing,CSE5GP,GP
+81,"Systems Analysis, Design and Requirements Engineering",CSE5SD,SADRE
+82,Social Robotics,CSE5SR,SR
+83,Topics in Adaptive Cybersecurity,CSE5TAC,TAC
+84,Object Oriented Programming and Design,CSE600A/ECE600A,OOPD
+85,Data Warehouse,CSE606,DW
+86,Statistical Computation,CSE609,SComp
+87,Introduction to Quantum Computing,CSE622,IQC
+88,Semantic Web,CSE632,Sweb
+89,Introduction to Robotics,CSE633/ECE670,IRob
+90,Communication Networks,CSE636/ECE636,CN
+91,Collaborative Filtering,CSE640,CF
+92,Deep Learning,CSE641,DL
+93,Advanced Machine Learning,CSE642,AML
+94,Artificial Intelligence,CSE643,AI
+95,Multimedia Security,CSE694F/ECE651,MS
+96,Advanced Topics in Mobile Computing,CSE734,ATMC
+97,Network Anonymity and Privacy,CSE749,NAP
+98,Topics in Cryptanalysis,CSE793A,TC
+99,Design Drawing & Visualization,DES101,DDV
+100,Prototyping Interactive Systems,DES130,PIS
+101,Design Processes and Perspectives,DES201,DPP
+102,Visual Design & Communication,DES202,VDC
+103,Human Computer Interaction ,DES204,HCI
+104,Animation and Graphics,DES302,A&G
+105,Film Making and Radio Podcasting,DES303,FMRP
+106,Game Development & Design,DES512,GDD
+107,"Wearable Applications, Research, Devices, Interactions",DES513,WARDI
+108,Digital Audio,DES514,DA
+109,Information Systems in Public Health,DES515,ISPR
+110,Introduction to 3D Animation,DES516s,I3D
+111,Introduction to Epidemiology,DES517,IEP
+112,Introduction to Motion Graphics,DES518,IMG
+113,Design of Interactive Systems,DES519,DIS
+114,Digital Circuits,ECE111,DC
+115,Basic Electronics,ECE113,BE
+116,Integrated Electronics,ECE214,IE
+117,Circuit Theory and Device,ECE215,CTD
+118,Fields and Waves,ECE230,F&W
+119,Principles of Communication Systems,ECE240,PCS
+120,Signals and Systems,ECE250,S&S
+121,Embedded Logic Design,ECE270,ELD
+122,Introduction to VLSI Design,ECE314/ECE514,DVD
+123,Analog CMOS Circuit Design,ECE315/ECE515,CMOS
+124,Solid State Devices,ECE318,SSD
+125,Digital Communication Systems,ECE340,DCS
+126,Mobile Communications,ECE343,MC
+127,Digital Image Processing,ECE350,DIP
+128,Digital Signal Processing,ECE351,DSP
+129,Antennas Theory and Design,ECE431/ECE631,ATD
+130,Radar Systems,ECE432,RS
+131,Statistical Signal Processing,ECE452,SSP
+132,Probability and Random Process,ECE501,PRP
+133,Digital Hardware Design (DHD),ECE510,DHD
+134,VLSI Design Flow,ECE513,VLDIDF
+135,Digital VLSI Design,ECE514,DVD
+136,System on Chip Design and Test,ECE516,SCD&T
+137,Introduction to Nanoelectronics,ECE517,INE
+138,Intelligent Applications Implementation on Heterogeneous Platforms,ECE519,IAI
+139,Satellite Navigation and Sensor Fusion,ECE533,SNSF
+140,Optical Communications Systems,ECE534,OCS
+141,Optical Networking,ECE536s,ON
+142,Wireless Communication Evolution from 3G to 5G,ECE537,WCE
+143,Wireless System Implementation,ECE539,WSI
+144,Principals of Digital Communication System,ECE543,PDCS
+145,Compressive Sensing,ECE554,CS
+146,Speech Recognition and Understanding,ECE557,SRU
+147,Transform Learning and Applications,ECE558,TLA
+148,Modeling and Analysis of Random 5G Networks,ECE55G,5GN
+149,Control Theory,ECE570,CNT
+150,Optimal Control Systems,ECE571,OCS
+151,Advanced Embedded Logic Design,ECE573,AELD
+152,Machine Learning Techniques for Real Time Control,ECE577,MLRC
+153,Nonlinear and Adaptive Control of Robotic Systems,ECE579,NLR
+154,Autonomous Driving,ECE581,AD
+155,Memory Design and Testing,ECE611,MDT
+156,Mixed Signal Design,ECE612,MSD
+157,Stochastic Estimation and Control,ECE672,SEC
+158,Microeconomics,ECO101,ME
+159,Macroeconomics,ECO201,MA
+160,Money and Banking,ECO223,MB
+161,Introduction to Economic Analysis,ECO301,IEA
+162,Game Theory,ECO311,GMT
+163,Industrial Organization,ECO312,IO
+164,Market Design,ECO313,MD
+165,Econometrics I,ECO321,ECO
+166,Foundations of Finance,ECO331,FF
+167,Valuation and Portfolio Management,ECO332,VPM
+168,Decision Theory,ECO503,DT
+169,Research Methods,ENG599s,RM
+170,Environmental Sciences,ESC205,EVS
+171,"Ecology, Evolution, and Environment",ESC207A,EEE
+172,Effective Supply Chain for E Commerce,MGT310,ESCM
+173,Emerging Issues in IT Management,MGT311,EIITM
+174,Math I (Linear Algebra),MTH100,M-I
+175,Introduction to Mathematical Logic,MTH200,IML
+176,Math II (Probability and Statistics),MTH201,P&S
+177,Mathematics III (Multivariate Calculus),MTH203,M-III
+178,Mathematics IV (Differential Equations),MTH204,M-IV
+179,Discrete Structures,MTH210,DS
+180,Number Theory,MTH211,NT
+181,Abstract Algebra I,MTH212,AA-I
+182,Real Analysis I,MTH240,RA-I
+183,Numerical Methods,MTH270,NM
+184,Algebra,MTH302,ALG
+185,Graph Theory,MTH310,GT
+186,Combinatorics and its Applications,MTH311,CIA
+187,Real Analysis-II,MTH340,RA-II
+188,Complex Analysis,MTH341,CmpA
+189,Introduction to Dynamical Systems,MTH343/MTH543,IDS
+190,Stochastic Processes and Applications,MTH371,SPA
+191,Statistical Inference,MTH372,SI
+192,Scientific Computing,MTH373,SC
+193,Linear Optimization,MTH374/MTH574,LO
+194,Advanced Linear Algebra,MTH510,ALA
+195,Algebraic Number Theory,MTH512,ANT
+196,Abstract Algebra II,MTH513,AA-II
+197,Numerical Solutions Differential Equations,MTH570,NSDE
+198,Integral Transforms and their Applications,MTH571,ITA
+199,Introduction to Functional Analysis,MTH598,IFA
+200,Numerical Partial Differential Equations,MTH598,NPDE
+201,Variational Calculus and their Applications,MTH599,VCA
+202,Introduction to Cognitive Psychology,PSY201,Psy
+203,Positive Psychology,PSY202,Ppsy
+204,Cognitive Psychology,PSY301,CP
+205,Social Psychology,PSY302,SP
+206,Attention and Perception,PSY305,AP
+207,Learning and Memory,PSY306,LM
+208,Introduction to Sociology and Anthropology,SOC101,ISA
+209,Contemporary India Sociological Perspective,SOC202,CISP
+210,Sociology of New Media,SOC204,SNM
+211,Anthropology and Social Media,SOC205,ASM
+212,Business Anthropology,SOC206,BA
+213,Information Technology And Society,SOC207,ITS
+214,Organizations An Anthropological Perspective,SOC208,OAP
+215,Consumer Culture and Society,SOC209,CCS
+216,Sociological Theory,SOC210,ST1
+217,"Science, Technology and Society",SOC211,STS
+218,Urban Sociology,SOC302,US
+219,Digital Social Research,SOC307,DSR
+220,Gender and Media,SOC308,IPHI
+221,Critical Thinking and Readings in Social Science ,SSH101,CTRSS
+222,Introduction to Philosophy,SSH121,IPHI
+223,Critical Thinking,SSH124,CT
+224,Research Methods in Social Science and Design,SSH201,RMSSD
+225,Theatre Appreciation,SSH211,TA
+226,Introduction To The Study Of Literature,SSH214,Lit
+227,Nation and her Narratives,SSH215,NN
+228,Introduction to Indian Mythology,SSH216,IIM
+229,Indian Poetry Through the Ages,SSH217,IPA
+230,Social and Political Philosophy,SSH221,SPP
+231,Theory and Practice of Engineering Ethics,SSH222,TPEE
+232,Perspectives of Knowledge,SSH223,PoK
+233,"Computer, Information Ethics and Society",SSH224,CIES
+234,Democracy in India: Principles and Practices,SSH261,DIPP
+235,Advanced Writing,SSH311,AW
+236,Applied Ethics,SSH321,AE
+237,Philosophy of Technology,SSH322,PT
+238,Comparative Politics in Digital Era,SSH361,CPDE
+239,Advanced Topics in Human Centered Computing,,
+240,Analytic Number Theory,MTH516,ANT
+241,Biostatistics,BIO545,BioStats
+242,Calculus in R^N,MTH544,CRN
+243,Coding Theory,MTH514,CT
+244,Combinatorial Optimization,MTH517,CO
+245,Computer Aided Drug Design,BIO561,CADD
+246,Decision Procedures,,
+247,Distributed Computing,,
+248,Edge AI,,
+249,Introduction to 2D Animation,,
+250,Introduction to PDE,MTH550,IPDE
+251,Low Voltage Analog Circuit Design,,
+252,Network Security,,
+253,Privacy and Security in Online Social Media,CSE645,PSOSM
+254,RF Circuit Design,ECE321/ECE521,RFCD
+255,Sketching Communication Narrative,,SCN
+256,Spatial Statistics and Spatial Econometrics,ECO324/ECO524,SSSE
+257,Special Topics in Computer Vision,,SCV
+258,Verification and High-Level Synthesis of VLSI Designs,,HLSVLSI
+259,Computational Gastronomy,BIO544,CG
+260,Fluid Mechainics,MTH375/MTH575,FM
+261,Human Centred AI,,HCAI
+262,Introduction to 3D Production Design for Animation and Games,,3DAG
+263,Knowledge Graphs in Practice,,KG
+264,Point Set Toplogy,,PST
+265,Socio Digital Social Research,,

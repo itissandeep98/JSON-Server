@@ -18,7 +18,7 @@ class Ad(db.Model):
 	user_id = db.Column(db.Integer, nullable = False)
 	book_name = db.Column(db.String(100), nullable = False)
 	author = db.Column(db.String(50), nullable = False)
-	transaction_type = db.Column(db.Integer, nullable = False)
+	transaction_type = db.Column(db.String(4), nullable = False)
 	description = db.Column(db.String(254), nullable = True)
 	price = db.Column(db.Integer, nullable = False)
 	# date
