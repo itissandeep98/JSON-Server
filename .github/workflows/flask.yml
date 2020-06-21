@@ -24,7 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv
         pipenv install
-        pipenv shell
+        ls
         pip freeze > requirements.txt
         cat requirements.txt
         
