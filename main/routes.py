@@ -2,6 +2,7 @@ from flask import render_template, request, session
 from main import app, db
 from main.models import *
 import pandas as pd
+from flask_cors import cross_origin
 
 @app.route('/createad', methods = ['POST'])
 def create_ad():
@@ -154,6 +155,7 @@ def register():
 	return response
 
 @app.route('/courses', methods = ['GET'])
+@cross_origin()
 def courses():
 	try:
 		my_csv = pd.read_csv('./courses.csv', sep = ',')

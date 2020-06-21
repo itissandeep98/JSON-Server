@@ -10,6 +10,7 @@ flask = "*"
 flask-sqlalchemy = "*"
 mysqlclient = "*"
 pandas = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.8"
