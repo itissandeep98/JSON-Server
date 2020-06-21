@@ -8,7 +8,7 @@ contextlib2==0.6.0
 distlib==0.3.0
 distro==1.4.0
 Flask==1.1.2
-flask-cors==*
+flask-cors==3.0.6
 Flask-SQLAlchemy==2.4.3
 gunicorn==20.0.4
 html5lib==1.0.1
