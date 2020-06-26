@@ -9,7 +9,8 @@ verify_ssl = true
 flask = "*"
 pandas = "*"
 flask-cors = "*"
-gunicorn="*"
+gunicorn = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
