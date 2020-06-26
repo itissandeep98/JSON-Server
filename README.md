@@ -13,7 +13,8 @@ Just store all data in a `db.json` file and upload it to any github repo.
 2. Now you can fetch data from that file using this url `https://jsonserver-f.herokuapp.com/{username}/{reponame}`
 #### Example
 - repo: https://github.com/itissandeep98/ReactTest 
-- link: https://jsonserver-f.herokuapp.com/itissandeep98/ReactTest/
+- link: https://jsonserver-f.herokuapp.com/itissandeep98/ReactTest/ \
+  &ensp; &ensp; : https://jsonserver-f.herokuapp.com/itissandeep98/ReactTest/comments
 
 #### PS: 
 - There are other api also which does the same or even better work than this but they all come with a limitation of size or requirement of login into their site.
