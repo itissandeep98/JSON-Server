@@ -7,8 +7,6 @@ verify_ssl = true
 
 [packages]
 flask = "*"
-flask-sqlalchemy = "*"
-mysqlclient = "*"
 pandas = "*"
 flask-cors = "*"
 gunicorn="*"
