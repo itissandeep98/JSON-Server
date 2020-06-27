@@ -1,7 +1,5 @@
 from flask import render_template,jsonify
 from main import app
-import pandas as pd
-from flask_cors import cross_origin
 import base64
 import requests
 import json
