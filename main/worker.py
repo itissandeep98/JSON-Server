@@ -1,6 +1,5 @@
 import requests
 import base64
-import os
 
 server_url = "https://jsonserver-f.herokuapp.com/"
 api_url ='https://api.github.com/'

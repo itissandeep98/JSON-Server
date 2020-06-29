@@ -7,11 +7,12 @@ import json
 @app.route('/<username>/')
 def username(username):
 	req = fetch('users/'+username)
+	# print(req.headers['X-RateLimit-Remaining'])
 	if req.status_code == requests.codes.ok:
 		req=req.json()
-		dic = {"Username": req["login"], "Repository List": fetchAllRepo(
+		info = {"Username": req["login"], "Repository List": fetchAllRepo(
 			username), "Social Circle": fetchSocialCircle(username)}
-		return dic
+		return info
 	else:
 		return req.json()
 
@@ -27,7 +28,7 @@ def repo(username,repo):
 		else:
 			return{"errmess":'db.json file not found', "status":404}
 	except Exception as e:
-		return{"errmess":'Error in fetching the data', "status":404}
+		return req.json()
 
 	return jsonify(content)
 
@@ -49,7 +50,7 @@ def path(username,repo,path):
 		else:
 			return{"errmess":'db.json file not found', "status":404}
 	except Exception as e:
-		return{"errmess":'Error in fetching the data', "status":404}
+		return req.json()
 
 	return jsonify(content)
 
