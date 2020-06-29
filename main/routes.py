@@ -6,19 +6,19 @@ import json
 @app.route('/<username>')
 @app.route('/<username>/')
 def username(username):
-	req=fetchUser(username)
+	req = fetch('users/'+username)
 	if req.status_code == requests.codes.ok:
 		req=req.json()
 		dic = {"Username": req["login"], "Repository List": fetchAllRepo(
 			username), "Social Circle": fetchSocialCircle(username)}
 		return dic
 	else:
-		return{"errmess":"User not found","status":404}
+		return req.json()
 
 @app.route('/<username>/<repo>')
 @app.route('/<username>/<repo>/')
 def repo(username,repo):
-	req = fetchrepo(username, repo)
+	req = fetch('repos/'+username+'/'+repo+'/contents/db.json')
 	try:
 		if req.status_code == requests.codes.ok:
 			req = req.json()
@@ -34,7 +34,7 @@ def repo(username,repo):
 @app.route('/<username>/<repo>/<path:path>')
 def path(username,repo,path):
 	path=path.split("/")
-	req = fetchrepo(username, repo)
+	req = fetch('repos/'+username+'/'+repo+'/contents/db.json')
 	try:
 		if req.status_code == requests.codes.ok:
 			req = req.json()
