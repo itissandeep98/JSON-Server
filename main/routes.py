@@ -7,26 +7,44 @@ import json
 @app.route('/<username>/')
 def username(username):
 	req = fetch('users/'+username)
-	# print(req.headers['X-RateLimit-Remaining'])
+	print(req.headers['X-RateLimit-Remaining'])
 	if req.status_code == requests.codes.ok:
 		req=req.json()
-		info = {"Username": req["login"], "Repository List": fetchAllRepo(
-			username), "Social Circle": fetchSocialCircle(username)}
+		info = {"username": req["login"], 
+				"repository List": fetchAllRepo(username), 
+				"social": {
+					"followers": server_url+username+"/followers", 
+					"following": server_url+username+"/following"
+					}
+				}
 		return info
 	else:
 		return req.json()
 
+@app.route('/<username>/followers')
+def followers(username):
+   return jsonify(fetchfollowers(username))
+
+
+@app.route('/<username>/following')
+def following(username):
+   return jsonify(fetchfollowing(username))
+
+@app.route('/<username>/starred')
+def starred(username):
+   return jsonify(fetchstarred(username))
+
 @app.route('/<username>/<repo>')
 @app.route('/<username>/<repo>/')
 def repo(username,repo):
-	req = fetch('repos/'+username+'/'+repo+'/contents/db.json')
+	req = fetch('repos/'+username+'/'+repo+'/contents/'+dbfile)
 	try:
 		if req.status_code == requests.codes.ok:
 			req = req.json()
 			content = decode(req['content'])
 			content=json.loads(content)			
 		else:
-			return{"errmess":'db.json file not found', "status":404}
+			return{"errmess":dbfile+' file not found', "status":404}
 	except Exception as e:
 		return req.json()
 
@@ -35,7 +53,7 @@ def repo(username,repo):
 @app.route('/<username>/<repo>/<path:path>')
 def path(username,repo,path):
 	path=path.split("/")
-	req = fetch('repos/'+username+'/'+repo+'/contents/db.json')
+	req = fetch('repos/'+username+'/'+repo+'/contents/'+dbfile)
 	try:
 		if req.status_code == requests.codes.ok:
 			req = req.json()
@@ -48,7 +66,7 @@ def path(username,repo,path):
 					content=content[i]
 			
 		else:
-			return{"errmess":'db.json file not found', "status":404}
+			return{"errmess":dbfile+' file not found', "status":404}
 	except Exception as e:
 		return req.json()
 

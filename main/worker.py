@@ -3,6 +3,7 @@ import base64
 
 server_url = "https://jsonserver-f.herokuapp.com/"
 api_url ='https://api.github.com/'
+dbfile = "db.json"
 
 def decode(content):
 	content = base64.b64decode(content)
@@ -16,35 +17,39 @@ def fetch(path):
 	req = requests.get(url,auth=("itissandeep98",""))
 	return req
 
-
-def fetchSocialCircle(username):
-	userList = {"Followers": [], "Following": []}
+def fetchfollowers(username):
+	followers=[]
 	req = fetch("users/"+username+"/followers")
 	if req.status_code == requests.codes.ok:
 		req = req.json()
 		for i in req:
-			userList["Followers"].append(server_url+i["login"])
+			followers.append(server_url+i["login"])
+	return followers
 
+def fetchfollowing(username):
+	following=[]
 	req = fetch("users/"+username+"/following")
 	if req.status_code == requests.codes.ok:
 		req = req.json()
 		for i in req:
-			userList["Following"].append(server_url+i["login"])
+			following.append(server_url+i["login"])
+	return following
 
-	return userList
-
-
-def fetchAllRepo(username):
-	repoList = {"Owned": [], "Starred": []}
-	req = fetch("users/"+username+"/repos")
-	if req.status_code == requests.codes.ok:
-		req = req.json()
-		for i in req:
-			repoList["Owned"].append(server_url+i["full_name"])
-
+def fetchstarred(username):
+	starred=[]
 	req = fetch("users/"+username+"/starred")
 	if req.status_code == requests.codes.ok:
 		req = req.json()
 		for i in req:
-			repoList["Starred"].append(server_url+i["full_name"])
+			starred.append(server_url+i["full_name"])
+	return starred
+
+def fetchAllRepo(username):
+	repoList = {"owned": [], "starred": server_url+username+"/starred"}
+	req = fetch("users/"+username+"/repos")
+	if req.status_code == requests.codes.ok:
+		req = req.json()
+		for i in req:
+			repoList["owned"].append(server_url+i["full_name"])
+
 	return repoList
