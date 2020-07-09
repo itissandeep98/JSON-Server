@@ -11,7 +11,7 @@ def username(username):
 	if req.status_code == requests.codes.ok:
 		req=req.json()
 		info = {"username": req["login"], 
-				"repository List": fetchAllRepo(username), 
+				"repositories": fetchAllRepo(username), 
 				"social": {
 					"followers": server_url+username+"/followers", 
 					"following": server_url+username+"/following"
