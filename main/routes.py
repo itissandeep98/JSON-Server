@@ -1,4 +1,4 @@
-from flask import render_template,jsonify,session
+from flask import render_template,jsonify
 from main import app
 from main.worker import *
 import json
@@ -37,17 +37,13 @@ def starred(username):
 @app.route('/<username>/<repo>')
 @app.route('/<username>/<repo>/')
 def repo(username,repo):
-	if(username+repo not in session):
-		req = fetch('repos/'+username+'/'+repo+'/contents/'+dbfile)
+	
+	req = fetch('repos/'+username+'/'+repo+'/contents/'+dbfile)
 	try:
-		if username+repo in session or req.status_code == requests.codes.ok:
-			if (username+repo in session):
-				content = session[username+repo]
-			else:
-				req = req.json()
-				content = decode(req['content'])
-				content = json.loads(content)
-				session[username+repo] = content
+		if req.status_code == requests.codes.ok:
+			req = req.json()
+			content = decode(req['content'])
+			content = json.loads(content)
 		else:
 			return{"errmess":dbfile+' file not found', "status":404}
 	except Exception as e:
@@ -58,17 +54,13 @@ def repo(username,repo):
 @app.route('/<username>/<repo>/<path:path>')
 def path(username,repo,path):
 	path=path.split("/")
-	if(username+repo not in session):
-		req = fetch('repos/'+username+'/'+repo+'/contents/'+dbfile)
+	
+	req = fetch('repos/'+username+'/'+repo+'/contents/'+dbfile)
 	try:
-		if username+repo in session or req.status_code == requests.codes.ok:
-			if (username+repo in session):
-				content=session[username]
-			else:
-				req = req.json()
-				content = decode(req['content'])
-				content=json.loads(content)
-				session[username+repo] = content
+		if req.status_code == requests.codes.ok:
+			req = req.json()
+			content = decode(req['content'])
+			content=json.loads(content)
 
 			if(path[0]!=""):
 				for i in path:
