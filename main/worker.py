@@ -2,7 +2,9 @@ import requests
 import base64
 
 server_url = "https://jsonserver-f.herokuapp.com/"
+# server_url = "http://127.0.0.1:5000/"
 api_url ='https://api.github.com/'
+content_url = 'https://raw.githubusercontent.com/'
 dbfile = "db.json"
 
 def decode(content):
@@ -15,6 +17,11 @@ def decode(content):
 def fetch(path):
 	url = api_url+path
 	req = requests.get(url,auth=("itissandeep98",""))
+	return req
+
+def fetchfile(username,repo):
+	url=content_url+username+"/"+repo+"/master/"+dbfile
+	req=requests.get(url)
 	return req
 
 def fetchfollowers(username):

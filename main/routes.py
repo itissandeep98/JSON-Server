@@ -37,43 +37,36 @@ def starred(username):
 @app.route('/<username>/<repo>')
 @app.route('/<username>/<repo>/')
 def repo(username,repo):
-	
-	req = fetch('repos/'+username+'/'+repo+'/contents/'+dbfile)
-	try:
-		if req.status_code == requests.codes.ok:
-			req = req.json()
-			content = decode(req['content'])
-			content = json.loads(content)
-		else:
-			return{"errmess":dbfile+' file not found', "status":404}
-	except Exception as e:
-		return req.json()
-
-	return jsonify(content)
+	req = fetchfile(username,repo)
+	if req.status_code == requests.codes.ok:
+		req = req.json()
+		return req
+	else:
+		return {"errmess":dbfile+' file not found', "status":404}
 
 @app.route('/<username>/<repo>/<path:path>')
 def path(username,repo,path):
 	path=path.split("/")
-	
-	req = fetch('repos/'+username+'/'+repo+'/contents/'+dbfile)
-	try:
-		if req.status_code == requests.codes.ok:
-			req = req.json()
-			content = decode(req['content'])
-			content=json.loads(content)
-
+	if( "" in path):
+		path.remove("")
+	req = fetchfile(username,repo)
+	if req.status_code == requests.codes.ok:
+		req = req.json()
+		try:
 			if(path[0]!=""):
 				for i in path:
 					if(i.isnumeric()):
 						i=int(i)
-					content=content[i]
-			
-		else:
-			return{"errmess":dbfile+' file not found', "status":404}
-	except Exception as e:
-		return req.json()
+					req=req[i]
+		except:
+			return {"errmess": "not valid path", "status": 404}
+		return req
 
-	return jsonify(content)
+			
+	else:
+		return {"errmess":dbfile+' file not found', "status":404}
+	
+	
 
 @app.route('/')
 def index():
