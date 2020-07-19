@@ -1,7 +1,15 @@
-from flask import render_template,jsonify
+from flask import render_template,jsonify,request
 from main import app
 from main.worker import *
 import json
+
+
+@app.route('/sendmail',methods=["GET"])
+def sendmail():
+	emailto = request.args.get('email')
+	message = request.args.get('message')
+	subject = request.args.get('subject')
+	sendmail(emailto, subject, message)
 
 @app.route('/<username>')
 @app.route('/<username>/')
@@ -65,8 +73,6 @@ def path(username,repo,path):
 			
 	else:
 		return {"errmess":dbfile+' file not found', "status":404}
-	
-	
 
 @app.route('/')
 def index():

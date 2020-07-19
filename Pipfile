@@ -10,6 +10,7 @@ flask = "*"
 flask-cors = "*"
 gunicorn = "*"
 requests = "*"
+secure-smtplib = "*"
 
 [requires]
 python_version = "3.8"

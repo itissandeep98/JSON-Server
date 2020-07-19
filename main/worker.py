@@ -1,11 +1,15 @@
 import requests
 import base64
+import smtplib
+import os
 
 server_url = "https://jsonserver-f.herokuapp.com/"
 # server_url = "http://127.0.0.1:5000/"
 api_url ='https://api.github.com/'
 content_url = 'https://raw.githubusercontent.com/'
 dbfile = "db.json"
+emailfrom = "supgithub@gmail.com"
+password = os.getenv("emailpass")
 
 def decode(content):
 	content = base64.b64decode(content)
@@ -60,3 +64,13 @@ def fetchAllRepo(username):
 			repoList["owned"].append(server_url+i["full_name"])
 
 	return repoList
+
+
+def sendmail(emailto, subject, message):
+	message = 'Subject: {}\n\n{}'.format(subject, message)
+	# print(password)
+	s = smtplib.SMTP('smtp.gmail.com', 587)
+	s.starttls()
+	s.login(emailfrom, password)
+	s.sendmail(emailfrom, emailto, message)
+	s.quit()
