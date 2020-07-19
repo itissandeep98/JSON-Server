@@ -7,7 +7,7 @@ import json
 @app.route('/sendmail',methods=["GET"])
 def email():
 	try:
-		emailto = request.args.get('email')
+		emailto = request.args.get('emailto')
 		message = request.args.get('message')
 		subject = request.args.get('subject')
 		sendmail(emailto,subject,message)

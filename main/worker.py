@@ -8,8 +8,6 @@ server_url = "https://jsonserver-f.herokuapp.com/"
 api_url ='https://api.github.com/'
 content_url = 'https://raw.githubusercontent.com/'
 dbfile = "db.json"
-emailfrom = "supgithub@gmail.com"
-password = os.getenv("emailpass")
 
 def decode(content):
 	content = base64.b64decode(content)
@@ -70,6 +68,8 @@ def sendmail(emailto, subject, message):
 	message = 'Subject: {}\n\n{}'.format(subject, message)
 	s = smtplib.SMTP('smtp.gmail.com', 587)
 	s.starttls()
+	emailfrom = "supgithub@gmail.com"
+	password = os.getenv("emailpass")
 	s.login(emailfrom, password)
 	s.sendmail(emailfrom, emailto, message)
 	s.quit()
