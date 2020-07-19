@@ -10,6 +10,7 @@ def sendmail():
 	message = request.args.get('message')
 	subject = request.args.get('subject')
 	sendmail(emailto, subject, message)
+	return {"success":True}
 
 @app.route('/<username>')
 @app.route('/<username>/')
