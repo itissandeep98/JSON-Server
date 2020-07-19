@@ -5,11 +5,14 @@ import json
 
 
 @app.route('/sendmail',methods=["GET"])
-def sendmail():
-	emailto = request.args.get('email')
-	message = request.args.get('message')
-	subject = request.args.get('subject')
-	sendmail(emailto, subject, message)
+def email():
+	try:
+		emailto = request.args.get('email')
+		message = request.args.get('message')
+		subject = request.args.get('subject')
+		sendmail(emailto,subject,message)
+	except Exception as e:
+		return {"success": False}
 	return {"success":True}
 
 @app.route('/<username>')

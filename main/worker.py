@@ -68,7 +68,6 @@ def fetchAllRepo(username):
 
 def sendmail(emailto, subject, message):
 	message = 'Subject: {}\n\n{}'.format(subject, message)
-	# print(password)
 	s = smtplib.SMTP('smtp.gmail.com', 587)
 	s.starttls()
 	s.login(emailfrom, password)
