@@ -34,5 +34,4 @@ Just store all data in a `db.json` file and upload it to any github repo.
 
 - There are other api also which does the same or even better work than this but they all come with a limitation of size or requirement of login into their site.
 - Currently it only accepts `GET` requests.
-- Currently there is a limit to only 60 requests per hour from a particular IP (`set by Github Not me`)
 - feel free to open any issue or Pull request
