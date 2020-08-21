@@ -72,9 +72,8 @@ def path(username,repo,path):
 					req=req[i]
 		except:
 			return {"errmess": "not valid path", "status": 404}
-		return req
+		return jsonify(req)
 
-			
 	else:
 		return {"errmess":dbfile+' file not found', "status":404}
 
