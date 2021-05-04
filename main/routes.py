@@ -12,6 +12,7 @@ def email():
 		subject = request.args.get('subject')
 		sendmail(emailto,subject,message)
 	except Exception as e:
+		print(e)
 		return {"success": False}
 	return {"success":True}
 
