@@ -2,12 +2,15 @@ import requests
 import base64
 import smtplib
 import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 server_url = "https://jsonserver-f.herokuapp.com/"
 # server_url = "http://127.0.0.1:5000/"
 api_url = 'https://api.github.com/'
 content_url = 'https://raw.githubusercontent.com/'
 dbfile = "db.json"
+
 
 def decode(content):
     content = base64.b64decode(content)
@@ -27,6 +30,7 @@ def fetchfile(username, repo):
     req = requests.get(url)
     return req
 
+
 def fetchfollowers(username):
     followers = []
     req = fetch("users/"+username+"/followers")
@@ -35,6 +39,7 @@ def fetchfollowers(username):
         for i in req:
             followers.append(server_url+i["login"])
     return followers
+
 
 def fetchfollowing(username):
     following = []
@@ -45,6 +50,7 @@ def fetchfollowing(username):
             following.append(server_url+i["login"])
     return following
 
+
 def fetchstarred(username):
     starred = []
     req = fetch("users/"+username+"/starred")
@@ -53,6 +59,7 @@ def fetchstarred(username):
         for i in req:
             starred.append(server_url+i["full_name"])
     return starred
+
 
 def fetchAllRepo(username):
     repoList = {"owned": [], "starred": server_url+username+"/starred"}
@@ -66,11 +73,25 @@ def fetchAllRepo(username):
 
 
 def sendmail(emailto, subject, message):
-    message = 'Subject: {}\n\n{}'.format(subject, message)
-    s = smtplib.SMTP('smtp.gmail.com', 587)
-    s.starttls()
-    emailfrom = "supgithub@gmail.com"
-    password = os.getenv("emailpass")
-    s.login(emailfrom, password)
-    s.sendmail(emailfrom, emailto, message)
-    s.quit()
+    # message = 'Subject: {}\n\n{}'.format(subject, message)
+    # s = smtplib.SMTP('smtp.gmail.com', 587)
+    # s.starttls()
+    # emailfrom = "supgithub@gmail.com"
+    # password = os.getenv("emailpass")
+    # s.login(emailfrom, password)
+    # s.sendmail(emailfrom, emailto, message)
+    # s.quit()
+    message = Mail(
+        from_email='supgithub@gmail.com',
+        to_emails=emailto,
+        subject=subject,
+        html_content=message)
+
+    try:
+        sg = SendGridAPIClient(os.getenv('SENDGRID_API_KEY'))
+        response = sg.send(message)
+        # print(response.status_code)
+        # print(response.body)
+        # print(response.headers)
+    except Exception as e:
+        print(e.message)
