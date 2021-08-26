@@ -73,25 +73,15 @@ def fetchAllRepo(username):
 
 
 def sendmail(emailto, subject, message):
-    # message = 'Subject: {}\n\n{}'.format(subject, message)
-    # s = smtplib.SMTP('smtp.gmail.com', 587)
-    # s.starttls()
-    # emailfrom = "supgithub@gmail.com"
-    # password = os.getenv("emailpass")
-    # s.login(emailfrom, password)
-    # s.sendmail(emailfrom, emailto, message)
-    # s.quit()
     message = Mail(
-        from_email='supgithub@gmail.com',
+        from_email='admin@timetable.cf',
         to_emails=emailto,
         subject=subject,
         html_content=message)
 
     try:
         sg = SendGridAPIClient(os.getenv('SENDGRID_API_KEY'))
-        response = sg.send(message)
-        # print(response.status_code)
-        # print(response.body)
-        # print(response.headers)
+        sg.send(message)
+
     except Exception as e:
         print(e.message)
